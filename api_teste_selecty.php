@@ -97,10 +97,7 @@ if ($request_type == 'POST') {
             VALUES ('{$_POST['jsonData']['name']}',
             '$password_hash', '{$_POST['jsonData']['email']}', '{$_POST['jsonData']['user_name']}', '{$_POST['jsonData']['phone']}')");
         }
-        if (isset($_POST['jsonData']['academic'])and $_POST['jsonData']['academic'] != null) {
-            echo 'veio academic';
-        }
-        
+    
         $con->query("INSERT INTO users
         (name,password, email, user_name,
         phone) 
