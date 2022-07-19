@@ -107,14 +107,13 @@ if ($request_type == 'POST') {
         VALUES ('{$_POST['jsonData']['name']}',
         '$password_hash', '{$_POST['jsonData']['email']}', '{$_POST['jsonData']['user_name']}', '{$_POST['jsonData']['phone']}')");
         $last_id = $con->lastInsertId();
-        echo $last_id;
 
         if (isset($_POST['jsonData']['xp']) and $_POST['jsonData']['xp'] != null) {
 
             $con->query("INSERT INTO professional_experiences
             (professional_experience,user_code) 
             VALUES ('{$_POST['jsonData']['xp']}',
-            '$last_id'");
+            '$last_id')");
 
         }
         if (isset($_POST['jsonData']['academic'])and $_POST['jsonData']['academic'] != null) {
@@ -122,7 +121,7 @@ if ($request_type == 'POST') {
             $con->query("INSERT INTO academic_education
             (eduacation_institution,user_code) 
             VALUES ('{$_POST['jsonData']['academic']}',
-            '$last_id'");
+            '$last_id')");
 
         }
 
